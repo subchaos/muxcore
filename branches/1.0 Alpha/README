@@ -1,0 +1,75 @@
+MUX Core 1.0 Alpha
+http://code.google.com/p/muxcore/
+-------------------------------------
+
+This package has been tested to work with TinyMUX 2.7 and earlier. I
+have not made efforts to test compatibility with other servers, and
+I don't intend to at this time. I just don't have the experience with
+other servers or the inclination to do it all myself. If someone out
+there is interested in working on compatibility, more power to you!
+
+Included Files
+-------------------------------------
+  * This Readme
+  * source.txt
+  * muxcore1.0alpha.tar.gz
+  
+Installation the Fast and Easy Way
+-------------------------------------
+The tar.gz file included in this distribution is a ./Backup file of a
+bare bones installation of MUX Core on a fresh install of TinyMUX. By
+far the easiest and fastest way to install MUX Core is:
+
+1) Configure and compile TinyMUX
+2) cd to mux2.7/data and enter "rm netmux.*"
+3) Extract the tar.gz to your mux2.7/game folder.
+4) cd to mux2.7/game and enter "tar zxvf muxcore1.0alpha.tar.gz"
+5) Enter "cd data" and enter "./db_load netmux netmux.FLAT netmux.db"
+   It is necessary to have removed the netmux.db, netmux.pag, and
+   netmux.dir files from the base install, since db_load will not
+   overwrite them. Step 2 takes care of this for you.
+6) If you wish to change your gamename and server port info, or 
+   just take a look at the game options, cd back to mux2.7/game and
+   edit netmux.conf.
+7) Fire up your game and login as #1 with password "potrzebie". The
+   default CodeWIZ and BuildWIZ characters have the same password, and
+   you should @newpassword all three characters immediately. From there
+   +help and +shelp can help you out!
+
+Installation the Slow Way
+-------------------------------------
+1) Configure and compile TinyMUX
+2) Remove the default netmux files as in step 2 above.
+3) Edit your netmux.conf as you like, but with the following values:
+   master_room #2
+   access @function wizard
+   access @function/privileged wizard
+   function_invocation_limit 25000 (necessary for Anomaly Jobs)
+   room_parent #45
+   guest_char_num #61
+4) Decide how you want to handle +help and +shelp (see below).
+5) Start up the server and login at #1 with password 'potrzebie'.
+6) Use your client to quote in the source.txt file with a one second
+   delay between lines. The delay is necessary. Installation will take
+   about twenty-five minutes. You'll be notified when installation is
+   complete, and it will remind you to @newpassword #1, CodeWIZ, and
+   BuildWIZ.
+
++Help File Considerations
+-------------------------------------
+The default case for MUX Core is to use the included softcoded +help
+system. If you prefer the hardcoded help files, or just want to use
+your own softcoded help system, these text-based files are actually
+included in the "Easy Way" installation in addition to the softcoded
+system, and are accessed with ++help and ++shelp.
+
+You can remove these declarations in netmux.conf if you just want to
+use the softcoded system, or you can nuke the objects associated with
+the +Help commands (which are left separate from the main globals for
+this exact reason) and change netmux.conf to let plushelp.txt and
+staffhelp.txt use +help and +staff.
+
+If you use the "Slow Way" installation and want to use the text-based
++help files, you'll need to grab plushelp.txt and staffhelp.txt from
+the text subdirectory of the "Easy Way" tar.gz file. You may also want
+to grab the jhelp.txt file for Anomaly Jobs while you're in there.
