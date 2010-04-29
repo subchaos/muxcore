@@ -1,6 +1,8 @@
 #summary Documentation for Objects and Systems
 
 = #5: Global Functions =
+== Thanks! ==
+The header, footer, and subheader functions, as well as the capall function are based on code from St. Petersburg. Thanks to Chopin@StP, as well as any other past coders who worked on these functions. The idea behind the tags system comes from some code that I saw a very very long time ago from Firan, when they were still making certain softcode public. My tags code is my implementation of that idea, as their code was no longer available when I wrote it, but credit for the idea goes to Firan.
 
 == Flags ==
 
